@@ -708,7 +708,12 @@ impl ViewClass for TimeSeriesView {
                     state.is_dragging_time_cursor = true;
                 }
 
-                ui.paint_time_cursor(ui.painter(), &response, time_x, response.rect.y_range());
+                ui.paint_time_cursor(
+                    ui.painter(),
+                    Some(&response),
+                    time_x,
+                    response.rect.y_range(),
+                );
             }
 
             Ok(())
